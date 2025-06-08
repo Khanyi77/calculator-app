@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td colspan="4">
+                <input type="text" id="inputBox" value="0"/>
+            </td>
+        </tr>
+        <tr>
+            <td onclick="appendNumber('7')">7</td>
+            <td onclick="appendNumber('8')">8</td>
+            <td onclick="appendNumber('9')">9</td>
+            <td onclick="appendOperator('*')">x</td>
+        </tr>
+        <tr>
+            <td onclick="appendNumber('4')">4</td>
+            <td onclick="appendNumber('5')">5</td>
+            <td onclick="appendNumber('6')">6</td>
+            <td onclick="appendOperator('-')">-</td>
+        </tr>
+        <tr>
+            <td onclick="appendNumber('1')">1</td>
+            <td onclick="appendNumber('2')">2</td>
+            <td onclick="appendNumber('3')">3</td>
+            <td onclick="appendOperator('+')">+</td>
+        </tr>
+        <tr>
+            <td colspan="2" onclick="appendNumber('0')">0</td>
+            <td onclick="clearInput()">AC</td>
+            <td onclick="appendOperator('/')">/</td>
+        </tr>
+        <tr>
+            <td colspan="4" onclick="calculateResult()">=</td>
+        </tr>
+    </table>
+
+    <script>
+        function appendNumber(num) {
+            let inputBox = document.getElementById("inputBox");
+            if (inputBox.value === "0") {
+                inputBox.value = num;
+            } else {
+                inputBox.value += num;
+            }
+        }
+
+        function appendOperator(op) {
+            let inputBox = document.getElementById("inputBox");
+            inputBox.value += " " + op + " ";
+        }
+
+        function clearInput() {
+            document.getElementById("inputBox").value = "0";
+        }
+
+        function calculateResult() {
+            let inputBox = document.getElementById("inputBox");
+            try {
+                inputBox.value = eval(inputBox.value.replace(/x/g, '*'));
+            } catch (e) {
+                inputBox.value = "Error";
+            }
+        }
+    </script>
+</body>
+</html>

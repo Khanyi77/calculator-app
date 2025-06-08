@@ -1,0 +1,52 @@
+body{  background: #420dd3;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    background: #ce6113;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(232, 117, 9, 0.79);
+    overflow: hidden;
+}
+
+td {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.5em;
+    color: #fff;
+    background: #131314;
+    cursor: pointer;
+    transition: background 0.2s;
+    border: 1px solid #444;
+    user-select: none;
+}
+
+td[colspan="2"] {
+    width: 120px;
+}
+
+td[colspan="4"] {
+    width: 240px;
+}
+
+td:hover {
+    background: #444;
+}
+
+
+
+
+
+
+
+
+
+
